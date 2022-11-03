@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Waypoints in Directions</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="map"></div>
+    <div id="sidebar">
+      <div>
+        <br />
+        <b>Origin:</b>
+        <input type="text" id="start" placeholder="current location" style="width: 60%"/>
+        <br />
+        <br />
+        <b>Distance to Next Charging Station:</b><br />
+        <input type="number" id="segDistance" placeholder="default 100" min="1" style="width: 30%"/>
+        <span>Miles</span> 
+        <br />
+        <br />
+        
+        <b>Waypoints:</b>
+        <div id="waypoint">
+          <!-- <input type="text" name="new" id="news"> -->
+        </div>
+        <input type="button" value="Add new waypoint" onclick="add()">
+        
+        <br />
+        <br />
+        <b>Destination:</b>
+        <input type="text" id="end" style="width: 60%"/>
+        <br />
+        <br />
+        <div>
+          <input type="checkbox" id="Optimize"> Auto Optimize Waypoints Order
+          <br>
+          <input type="checkbox" id="Highways"> Avoid Highways
+          <br>
+          <input type="checkbox" id="Tolls"> Avoid Tolls
+          <br>
+          <input type="checkbox" id="complete"> Generate Complete Route
+        </div>
+        <br />
+        <div class="col1">
+          <input type="submit" id="submit"/> 
+          <!-- <input type="button" value="Refresh Page" onClick="window.location.reload(true)"> -->
+        </div>
+        
+        <div class="col2" id="col2">
+          
+        </div>
+        <br/>
+        <br/>
+        <!-- <label>Note: If the page finished loading but no route is generated, 
+          then no charging stations were found nearby. Please try a shorter/longer distance.</label> -->
+        <!-- <input type="submit" id="submit"/>
+        <div class="loader"></div> -->
+      </div>
+      <div id="directions-panel"></div>
+    </div>
+  </div>
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUkOdJWEHyeuDx2bZuTG1QGqOCFamuve8&libraries=places,geometry&callback=initMap"
+    async
+  ></script>
+  
+</body>
+</html>
+
+
+
